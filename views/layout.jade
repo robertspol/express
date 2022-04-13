@@ -1,7 +1,18 @@
 doctype html
+mixin links(name, url)
+  li
+    a(href=url class=url === path ? 'active' : null)=name
+
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    span=path
+
+    ul
+      +links('Nowości', '/news')
+      +links('Zagraj w quiz', '/quiz')
+      +links('Zaloguj się', '/admin')
+
     block content
