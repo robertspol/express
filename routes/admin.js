@@ -29,7 +29,7 @@ router.post('/news/add', (req, res) => {
     const newsData = new News(body);
 
     const errors = newsData.validateSync();
-    console.log('Mój błąd', errors)
+    // console.log('Mój błąd', errors)
 
     newsData.save(err => {
         if (err) {
